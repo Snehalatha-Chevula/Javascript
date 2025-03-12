@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <p>
+        <button onclick="add(1)">1</button>
+        <button onclick="add(2)">2</button>
+        <button onclick="add(3)">3</button>
+        <button onclick="add('+')">+</button>
+    </p>
+    <p>
+        <button onclick="add(4)">4</button>
+        <button onclick="add(5)">5</button>
+        <button onclick="add(6)">6</button>
+        <button onclick="add('-')">-</button>
+    </p>
+    <p>
+        <button onclick="add(7)">7</button>
+        <button onclick="add(8)">8</button>
+        <button onclick="add(9)">9</button>
+        <button onclick="add('*')">*</button>
+    </p>
+    <p>
+        <button onclick="add('%')">%</button>
+        <button onclick="add(0)">0</button>
+        <button onclick="add('.')">.</button>
+        <button onclick="add('C')">C</button>
+    </p>
+    <button onclick="add('=')">=</button>
+    <button onclick="add('/')">/</button>
+    <script>
+        let calculation = "";
+        add = (i) => {
+            if(i == '='){
+                calculation = eval(calculation);
+                console.log(calculation);
+            }
+            else if(i == 'C')
+                calculation = "";
+            else{
+                calculation += i;
+                console.log(calculation);
+            }
+            return;
+        }
+    </script>
+</body>
+</html>
