@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+</head>
+<body>
+    <p>Adults Plain Cotton T-Shirt</p>
+    <p>Price: $7.99</p>
+    <button style="background-color: yellow;" onclick="Added()">Add to cart</button>
+    <button style="background-color: orange;" onclick="loading()">Buy now</button>
+    <script>
+        Added = () => alert("Added");
+        loading = () => {
+            console.log("Loading...");
+            alert("Purchased");
+            return ;
+        }
+    </script>
+</body>
+</html>
