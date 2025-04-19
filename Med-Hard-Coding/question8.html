@@ -27,7 +27,15 @@
     <script>
         let myl = document.getElementById("myList");
         let but = document.getElementById("addButton");
-        but.addEventListener("click")
+        but.addEventListener("click",()=>{
+            const listele = document.createElement("li");
+            listele.classList.add("item");
+            listele.innerText = "newItem";
+            myl.append(listele);
+            listele.addEventListener("click",()=>{
+                myl.removeChild(listele);
+            });
+        });
     </script>
 </body>
 </html>
