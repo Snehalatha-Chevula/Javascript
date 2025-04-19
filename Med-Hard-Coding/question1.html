@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Question-1</p>
+    <p>Number and Math</p>
+    <script>
+        let num = 100200.56;
+        let code = "USD";
+        function formatCurrency(num,code){
+            let val = String(num);
+            if(code == "USD" || code == "EUR"){
+                let temp = "";
+                let idx = val.indexOf(".");
+                let len = val.length;
+                if(idx == -1)
+                    idx = len;
+                temp = val.slice(idx,len);
+                let cnt = 0;
+                for(let i=idx-1;i>=0;i--){
+                    if(cnt == 3){
+                        temp = val[i]+","+temp;
+                        cnt = 0;
+                    }
+                    else
+                        temp = val[i]+temp;
+                    cnt++;
+                }
+                return temp;
+            }
+            else{
+                let temp = "";
+                let idx = val.indexOf(".");
+                let len = val.length;
+                if(idx == -1)
+                    idx = len;
+                temp = val.slice(idx,len);
+                let isthree = false;
+                let cnt = 0;
+                for(let i=idx-1;i>=0;i--){
+                    if(!isthree && cnt == 3){
+                        temp = val[i]+","+temp;
+                        isthree = true;
+                        cnt = 0;
+                    }
+                    else if(isthree && cnt == 2)
+                        temp = val[i]+","+temp;
+                    else
+                        temp = val[i]+temp;
+                    cnt++;
+                }
+                return temp;
+            }
+        }
+        console.log(formatCurrency(num,code));
+    </script>
+</body>
+</html>

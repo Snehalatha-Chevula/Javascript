@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Count = 0</p>
+    <button onclick="Inc()">Increment</button>
+    <button onclick="Dec()">Decrement</button>
+    <script>
+        let cnt = 0;
+        function Inc(){
+            cnt++;
+            let para = document.getElementById("p1");
+            para.innerText =  `Count = ${cnt}`;
+        }
+        function Dec(){
+            if(cnt > 0)
+                cnt--;
+            let para = document.getElementById("p1");
+            para.innerText = `Count = ${cnt}`;
+        }
+    </script>
+</body>
+</html>
