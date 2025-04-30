@@ -17,17 +17,31 @@
     <p>Question-8</p>
     <div id="container">
         <h1>My List</h1>
-        <ul id="myList">
+        <ul class="myList">
           <li class="item">Item 1</li>
           <li class="item">Item 2</li>
           <li class="item">Item 3</li>
         </ul>
-        <button id="addButton">Add Item</button>
+        <button class="addButton">Add Item</button>
       </div>
     <script>
-        let myl = document.getElementById("myList");
-        let but = document.getElementById("addButton");
-        but.addEventListener("click")
+        let myl = document.querySelector(".myList");
+        let but = document.querySelector(".addButton");
+        but.addEventListener("click",()=>{
+            const listele = document.createElement("li");
+            listele.classList.add("item");
+            listele.innerHTML = "newItem";
+            myl.append(listele);
+            listele.addEventListener("click",()=>{
+                myl.removeChild(listele);
+            });
+        });
+        let exisl = document.querySelectorAll(".item");
+        exisl.forEach((item)=>{
+            item.addEventListener("click",()=>{
+                myl.removeChild(item);
+            });
+        });
     </script>
 </body>
 </html>
