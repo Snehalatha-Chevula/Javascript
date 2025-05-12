@@ -5,6 +5,18 @@ const todoname = document.querySelector("#todo-input");
 addButton.addEventListener("click",()=>{
     let task = todoname.value;
     let date = dateField.value;
+    if(!task && !date){
+        alert("Please enter task and date");
+        return;
+    }
+    else if(!task){
+        alert("Please enter todo task");
+        return;
+    }
+    else if(!date){
+        alert("Please select a date");
+        return;
+    }
     let para1 = document.createElement("p");
     para1.innerText = task;
     let para2 = document.createElement("p");
